@@ -28,9 +28,12 @@ function handleInput(event) {
 function renderCountryList(country) {
   if (country.length > 10) {
     Notify.info('Too many matches found. Please enter a more specific name.');
+    refs.countryList.innerHTML = "";
+    refs.countryCard.innerHTML = "";
   }
   if (country.length >= 2 && country.length <= 10) {
     refs.countryList.innerHTML = generateMarkupList(country);
+    refs.countryCard.innerHTML = "";
   }
   if (country.length === 1) {
     refs.countryList.innerHTML = '';
