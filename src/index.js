@@ -24,6 +24,7 @@ function handleInput(event) {
     .then(renderCountryList)
     .catch(error => {
       refs.countryList.innerHTML = '';
+      refs.countryCard.innerHTML = '';
       Notify.failure('Oops, there is no country with that name')});
 }
 
