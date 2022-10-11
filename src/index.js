@@ -22,7 +22,9 @@ function handleInput(event) {
 
   fetchCountries(findCountry)
     .then(renderCountryList)
-    .catch(error => Notify.failure('Oops, there is no country with that name'));
+    .catch(error => {
+      refs.countryList.innerHTML = '';
+      Notify.failure('Oops, there is no country with that name')});
 }
 
 function renderCountryList(country) {
